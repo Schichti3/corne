@@ -26,6 +26,7 @@
 
     keymap {
         compatible = "zmk,keymap";
+        locale = "de"; // Oder "de-de" abhängig von deiner ZMK-Version
 
         default_layer {
             // -----------------------------------------------------------------------------------------
