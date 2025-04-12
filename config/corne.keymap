@@ -22,6 +22,16 @@
             tapping-term-ms = <100>;
             quick-tap-ms = <25>;
         };
+
+        bkspace_on_tab: bkspace_on_tab {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BKSPACE_ON_TAB";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <25>;
+        };
     };
 
     keymap {
@@ -35,10 +45,10 @@
             //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
 
             bindings = <
-&kp LEFT_CONTROL  &kp Q  &kp W  &kp E     &kp R                &kp T        &kp Z       &kp U                &kp I      &kp O    &kp P     &kp BSPC
-&kp LEFT_CONTROL  &kp A  &kp S  &kp D     &kp F                &kp G        &kp H       &kp J                &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Y  &kp X  &kp C     &kp V                &kp B        &kp N       &kp M                &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LGUI  &esc_on_raise 1 ESC  &kp SPACE    &kp RETURN  &esc_on_raise 2 ESC  &kp LALT
+&kp LEFT_CONTROL  &kp Q  &kp W  &kp E     &kp R                &kp T        &kp Z       &kp U                        &kp I      &kp O    &kp P     &kp BSPC
+&kp LEFT_CONTROL  &kp A  &kp S  &kp D     &kp F                &kp G        &kp H       &kp J                        &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Y  &kp X  &kp C     &kp V                &kp B        &kp N       &kp M                        &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                                &kp LGUI  &esc_on_raise 1 ESC  &kp SPACE    &kp RETURN  &bkspace_on_tab 2 BACKSPACE  &kp LALT
             >;
         };
 
