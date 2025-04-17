@@ -44,6 +44,38 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        layer_3 {
+            bindings = <&mo 3>;
+            key-positions = <37 40>;
+        };
+    };
+
+    macros {
+        task_manager: task_manager {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp ESCAPE>;
+            label = "TASK_MANAGER";
+        };
+
+        ctrl_shift_tab: ctrl_shift_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp TAB>;
+            label = "CTRL_SHIFT_TAB";
+        };
+
+        w_lock: w_lock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp L>;
+            label = "W_LOCK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -94,10 +126,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans           &trans    &trans  &trans  &trans  &trans  &trans         &w_lock
+&trans  &trans  &trans  &trans  &ctrl_shift_tab  &trans    &trans  &trans  &trans  &trans  &task_manager  &trans
+&trans  &trans  &trans  &trans  &trans           &trans    &trans  &trans  &trans  &trans  &trans         &trans
+                        &trans  &trans           &trans    &trans  &trans  &trans
             >;
         };
     };
