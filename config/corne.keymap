@@ -42,6 +42,17 @@
             tapping-term-ms = <130>;
             quick-tap-ms = <35>;
         };
+
+        control_on_enter: control_on_enter {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CONTROL_ON_ENTER";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <50>;
+        };
     };
 
     combos {
@@ -79,10 +90,10 @@
             //                      | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5       &kp N6    &kp N7    &kp N8        &kp N9        &kp N0        &kp BSPC
-&trans   &kp F1  &kp F2  &kp F3   &kp F4   &kp F5       &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT     &kp F11       &kp F12
-&trans   &kp F8  &kp F9  &kp F10  &kp F11  &kp F12      &trans    &trans    &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
-                         &trans   &trans   &kp SPACE    &kp RET   &trans    &kp LALT
+&kp TAB  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5       &kp N6                                &kp N7    &kp N8    &kp N9     &kp N0   &kp BSPC
+&trans   &kp F1  &kp F2  &kp F3   &kp F4   &kp F5       &kp LEFT                              &kp DOWN  &kp UP    &kp RIGHT  &kp F11  &kp F12
+&trans   &kp F8  &kp F9  &kp F10  &kp F11  &kp F12      &trans                                &trans    &trans    &trans     &trans   &kp LEFT_SHIFT
+                         &trans   &trans   &kp SPACE    &control_on_enter LEFT_CONTROL ENTER  &trans    &kp LALT
             >;
         };
 
@@ -103,9 +114,9 @@
 
         layer_3 {
             bindings = <
-&trans  &trans           &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp ESCAPE  &kp T     &trans  &trans         &kp LEFT_GUI  &kp L   &trans  &trans
-&trans  &kp EXCLAMATION  &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp TAB     &kp P     &trans  &kp LEFT_ALT   &kp TAB       &trans  &trans  &trans
-&trans  &trans           &trans            &kp LEFT_CONTROL  &kp TAB     &trans    &trans  &kp RIGHT_ALT  &trans        &trans  &trans  &trans
+&trans  &trans           &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp ESCAPE  &kp T     &trans  &trans         &kp LEFT_GUI  &kp L         &trans        &trans
+&trans  &kp EXCLAMATION  &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp TAB     &kp P     &trans  &kp LEFT_ALT   &kp TAB       &trans        &trans        &trans
+&trans  &trans           &trans            &kp LEFT_CONTROL  &kp TAB     &trans    &trans  &kp RIGHT_ALT  &trans        &bt BT_SEL 1  &bt BT_SEL 0  &bt BT_CLR
                                            &trans            &trans      &trans    &trans  &trans         &trans
             >;
         };
