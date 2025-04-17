@@ -103,10 +103,10 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp ESCAPE  &kp EXCLAMATION    &trans  &trans         &kp LEFT_GUI  &kp L   &trans  &trans
-&trans  &trans  &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp TAB     &kp P              &trans  &kp LEFT_ALT   &kp TAB       &trans  &trans  &trans
-&trans  &trans  &trans            &kp LEFT_CONTROL  &kp TAB     &trans             &trans  &kp RIGHT_ALT  &trans        &trans  &trans  &trans
-                                  &trans            &trans      &trans             &trans  &trans         &trans
+&trans  &trans           &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp ESCAPE  &kp T     &trans  &trans         &kp LEFT_GUI  &kp L   &trans  &trans
+&trans  &kp EXCLAMATION  &kp LEFT_CONTROL  &kp LEFT_SHIFT    &kp TAB     &kp P     &trans  &kp LEFT_ALT   &kp TAB       &trans  &trans  &trans
+&trans  &trans           &trans            &kp LEFT_CONTROL  &kp TAB     &trans    &trans  &kp RIGHT_ALT  &trans        &trans  &trans  &trans
+                                           &trans            &trans      &trans    &trans  &trans         &trans
             >;
         };
     };
