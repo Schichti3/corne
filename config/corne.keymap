@@ -57,21 +57,28 @@
         task_manager: task_manager {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp ESCAPE>;
+            bindings =
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp ESCAPE>,
+                <&macro_press>;
+
             label = "TASK_MANAGER";
         };
 
         ctrl_shift_tab: ctrl_shift_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp TAB>;
+            bindings =
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp TAB>,
+                <&macro_press>;
+
             label = "CTRL_SHIFT_TAB";
         };
 
         w_lock: w_lock {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI &kp L>;
+            bindings = <&kp LEFT_GUI &kp L>, <&macro_press>;
+
             label = "W_LOCK";
         };
     };
